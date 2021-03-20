@@ -5,11 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item.view.*
 
 class Adapter(private val List: List<Item>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
-    class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val text: TextView = item.text
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val text: TextView = view.findViewById(R.id.text)
+        init {
+            // You can add onClick Listeners here
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
